@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 13} 
+\author{Kummitha Jhanavi (CS21BTECH11032)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+
+
+
+% Blocks frame
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}
+       
+       Show that if 
+       
+       R_{T}(\tau) =\frac{1}{2T} $\int_{-T+\mid\tau\mid/2}^{T-\mid\tau\mid/2}$  x(t+$\frac{\tau}{2}$)x(t-$\frac{\tau}{2}$)dt
+       
+       is the estimate of the autocorrelation R($\tau$) of a zero-mean normal process ,then
+       
+       \sigma_{R_{T}}^{2} = \frac{1}{2T}$\int_{-2T+\mid\tau\mid}^{2T-\mid\tau\mid}$ [R^{2}(\alpha)+R(\alpha+\tau)R(\alpha-\tau)](1-\frac{\mid\tau\mid +\mid\alpha\mid}{2T})d\alpha
+    \end{block}
+    
+\end{frame} 
+
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}
+    
+    With c = T- $\frac{\mid\tau\mid}{2}$
+    \begin{equation}
+        z(t)=x(t + \frac{\mid\tau\mid}{2})x(t - \frac{\mid\tau\mid}{2})
+        \end{equation}
+        \begin{equation}
+            From equation f(x_{1},.....,x_{n}) = f(x_{n}\mid x_{n-1},.....,x_{1}).....f(x_{2}\mid x_{1})f(x_{1})
+        \end{equation}
+        \begin{center}
+           From equation 2 we can write as  
+        \end{center}
+        \begin{equation}
+              E(z(t_{1})z(t_{2}))-E(z(t_{1}))E(z(t_{2})) 
+            
+            = R^{2}(t_{1}-t{2})+R(t_{1}-t_{2}+\tau)R(t_{1}-t_{2}-\tau)
+        \end{equation}
+        \begin{equation}
+            4T^{2}Var R_{T}(\tau) = \int_{-c}^{c} \int_{-c}^{c} [R^{2}(t_{1}-t_{2})+R(t_{1}-t_{2}+\tau)R(t_{1}-t_{2}-\tau)]dt_{1}dt_{2}
+        \end{equation}
+
+\end{block}
+    
+\end{frame}
+
+\begin{frame}
+\begin{block}
+    
+    \begin{center}
+        = \int_{-2c}^{2c} [R^(\alpha)+R(\alpha+\tau)R(\alpha-\tau)](2T -\mid\tau\mid -\mid\alpha\mid)d\alpha
+    \end{center}
+\end{block}
+    
+\end{frame}
+
+
+
+\end{document}
